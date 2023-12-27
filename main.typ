@@ -1,19 +1,8 @@
 #import "templates/index.typ": *
 
-// Take a look at the file `template.typ` in the file panel
-// to customize this template and discover how it works.
-#show: project.with(
-  title: "Test",
-  authors: (
-    "В.Д. Панков",
-  ),
-  teachers: ("И. А. Юрьева",),
-  education: "ГУАП"
-)
+// Тут указываем только авторов [authors] и название работы [title] 
+#show: project.with(authors: ("В.Д. Панков", ))
 
-// We generated the example code below so you can see how
-// your document will look. Go ahead and replace it with
-// your own content!
 
 = Introduction
 #lorem(60)

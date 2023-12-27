@@ -3,6 +3,8 @@
 // It takes your content and some metadata and formats it.
 // Go ahead and customize it to your liking!
 #let project(
+  authors: (),
+  title: "",
   body,
 ) = {
   // Set the document's basic properties.
@@ -12,11 +14,9 @@
 
   // Структура
   // Титульный лист
-  titlepage(title: "Test",
-  authors: (
-    "В.Д. Панков",
-  ),
-  teachers: ("И. А. Юрьева",),
+  titlepage(title: title,
+  authors: authors,
+  teachers: ("Преподаватель 1",),
   education: "ГУАП")
   pagebreak()
 
