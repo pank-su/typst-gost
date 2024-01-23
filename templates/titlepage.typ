@@ -25,7 +25,7 @@
   ) = {
   
   set text(font: "Times New Roman", size: 12pt, lang: "ru", hyphenate: false)
-  set page(margin: (right: 15mm, left: 15mm, top: 20mm, bottom: 20mm))
+  set page(margin: (right: 15mm, left: 15mm, top: 20mm, bottom: 20mm), paper: "a4")
   align(center, education)
   align(center, department)
   

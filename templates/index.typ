@@ -1,5 +1,6 @@
 #import "titlepage.typ": titlepage
 #import "toc.typ": toc
+#import "escd.typ": basicFrame
 
 
 #let index(
@@ -29,7 +30,7 @@
   // Настройки страниц.
   set text(font: "Times New Roman", size: 14pt, lang: "ru", hyphenate: true)
   set heading(numbering: "1.1")
-  set page(margin: (left: 25mm, right: 15mm, top: 20mm, bottom: 25mm), numbering: "1", number-align: center)
+  set page(margin: (left: 25mm, right: 10mm, top: 20mm, bottom: 25mm),  background: basicFrame())
   set par(justify: true, leading: 1.2em)
   // show heading: set block(below: 16pt, above: 32pt)
   set list(marker: [---])
@@ -39,7 +40,6 @@
   show figure: it =>  [#align(center, [#it.body #it.caption \ ])]
   set figure(supplement: "Рисунок")
   set figure.caption(separator: [ -- ])
-  set page()
 
 
   let indent = 1.25cm
