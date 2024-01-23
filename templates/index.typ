@@ -1,7 +1,8 @@
 #import "titlepage.typ": titlepage
+#import "toc.typ": toc
 
 
-#let project(
+#let index(
   authors: (),
   title: "",
   body,
@@ -19,31 +20,39 @@
   pagebreak()
 
 
-  // Table of contents.
-  outline(depth: 3, indent: true)
-  pagebreak()
+  
+  // Содержание
+  toc()
 
+  // pagebreak()
 
-  // Main body.
-  set page(margin: (left: 25mm, right: 15mm, top: 20mm, bottom: 25mm))
+  // Настройки страниц.
+  set page(margin: (left: 25mm, right: 15mm, top: 20mm, bottom: 25mm), numbering: "1", number-align: center)
   set par(justify: true, leading: 1.2em)
   // show heading: set block(below: 16pt, above: 32pt)
-  show heading: set text(size: 14pt)
   set list(marker: [---])
-  show outline: set align(center)
   show table: set text(hyphenate: false)
   show table: set par(justify: false)
   
   show figure: it =>  [#align(center, [#it.body #it.caption \ ])]
   set figure(supplement: "Рисунок")
   set figure.caption(separator: [ -- ])
-  set page(numbering: "1", number-align: center)
+  set page()
+
 
   let indent = 1.25cm
   set par(first-line-indent: indent)
-  show heading: it => {
+  show heading: set text(size: 14pt)
+  show heading.where(numbering: "1.1"): it => {
    stack(dir: ltr, h(indent), it)
    par(text(size:0.35em, h(0.0em)))
   }
+  show heading.where(numbering: none): it => {
+   it
+   par(text(size:0.35em, h(0.0em)))
+  }
+  show heading.where(level: 1): it => [#pagebreak() #it]
+  show figure.where(kind: table): set figure.caption(position: top)
+
   body
 }
