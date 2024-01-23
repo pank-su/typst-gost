@@ -8,15 +8,15 @@
   body,
 ) = {
   set document(author: authors, title: title)
-  set text(font: "TeX Gyre Termes", size: 14pt, lang: "ru", hyphenate: true)
-  set heading(numbering: "1.1")
+
 
   // Структура
   // Титульный лист
-  titlepage(title: title,
+  titlepage(title: "",
   authors: authors,
-  teachers: ("Преподаватель 1",),
-  education: "ГУАП")
+  
+  position: "Преподаватель",
+  education: "МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ\nфедеральное государственное автономное образовательное учреждение высшего образования\n«Санкт-Петербургский государственный университет аэрокосмического приборостроения»", group: "С021к", documentName: "ПОЯСНИТЕЛЬНАЯ ЗАПИСКА К КУРСОВОМУ ПРОЕКТУ")
   pagebreak()
 
 
@@ -27,6 +27,8 @@
   // pagebreak()
 
   // Настройки страниц.
+  set text(font: "Times New Roman", size: 14pt, lang: "ru", hyphenate: true)
+  set heading(numbering: "1.1")
   set page(margin: (left: 25mm, right: 15mm, top: 20mm, bottom: 25mm), numbering: "1", number-align: center)
   set par(justify: true, leading: 1.2em)
   // show heading: set block(below: 16pt, above: 32pt)

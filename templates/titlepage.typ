@@ -23,6 +23,9 @@
   city: "ГОРОД",
   isPractice: false // TODO если практика, то добавить дополнительное поле для оценки
   ) = {
+  
+  set text(font: "Times New Roman", size: 12pt, lang: "ru", hyphenate: false)
+  set page(margin: (right: 15mm, left: 15mm, top: 20mm, bottom: 20mm))
   align(center, education)
   align(center, department)
   
@@ -30,10 +33,10 @@
 ЗАЩИЩЁН С ОЦЕНКОЙ", align(bottom, line(length: 80pt, start: (5pt, 0pt)))) ) // тут start = отступ
   v(5pt)
   align(left, "РУКОВОДИТЕЛИ")
-  grid(columns: (2fr, 1fr, 2fr), gutter: 10pt, 
-  position, "", align(center, teachers.join(", ")), 
+  grid(columns: (1.5fr, 1fr, 1.5fr), gutter: 10pt, 
+  align(center, position), "", align(center, teachers.join(", ")), 
   line(length: 100%), line(length: 100%), line(length: 100%), 
-  align(center, text(0.75em, "должность, уч.степень, звание")), align(center, text(0.75em, "подпись, дата")), align(center, text(0.75em, "инициалы, фамилия")),)
+  align(center, text(0.9em, "должность, уч.степень, звание")), align(center, text(0.9em, "подпись, дата")), align(center, text(0.9em, "инициалы, фамилия")),)
   
   
   v(3fr)
@@ -45,7 +48,7 @@
   "ВЫПОЛНИЛ", "", "", "",
   "СТУДЕНТ ГР №", align(center, group), "", align(center, authors.join(", ")), 
   "", line(length: 100%), line(length: 100%), line(length: 100%), 
-  "", align(center, text(0.75em, "должность, уч.степень, звание")), align(center, text(0.75em, "подпись, дата")), align(center, text(0.75em, "инициалы, фамилия")),)
+  "", align(center, text(0.9em, "должность, уч.степень, звание")), align(center, text(0.9em, "подпись, дата")), align(center, text(0.9em, "инициалы, фамилия")),)
   v(3fr)
   align(center, stack(dir: ltr, city, h(10pt), str(date.year())))
 }
